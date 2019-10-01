@@ -61,9 +61,15 @@ TEMPLATES = [
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'sample',
+        'USER': 'postgres',
+        'PASSWORD': 'Password',
+        'HOST': 'localhost',
+        'PORT': '',
+        'ATOMIC_REQUESTS': True,
+    },
 }
 
 
